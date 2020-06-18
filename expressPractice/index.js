@@ -1,33 +1,15 @@
 const express = require('express');
 const path = require('path');
+const members = require('./public/Members')
 
 const app = express();
 
-const members = [
-    {
-        id: 1,
-        name: 'joe doe',
-        email: 'cat@gmail.com',
-        status: 'active'
-    },
-    {
-        id: 2,
-        name: 'jane doe',
-        email: 'rat@gmail.com',
-        status: 'inactive'
-    },
-    {
-        id: 3,
-        name: 'kevin jerk',
-        email: 'bat@gmail.com',
-        status: 'active'
-    }
-]
 
+//gets all members
 app.get('/api/members', (req, res) => {
     res.json(members);
 });
-
+//sets public folder to static 
 app.use(express.static(path.join(__dirname, 'public')));
 
 const PORT = process.env.PORT || 5000;
