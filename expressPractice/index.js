@@ -4,12 +4,14 @@ const logger = require('./middleWaree/logger');
 
 const app = express();
 
+//body parse middleware
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+
 //sets public folder to static 
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/members', require('./routes/api/members'));
-
-//app.use('/api/members')
 
 const PORT = process.env.PORT || 5000;
 
