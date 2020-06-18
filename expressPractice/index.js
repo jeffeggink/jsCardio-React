@@ -7,7 +7,7 @@ const app = express();
 //sets public folder to static 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('api/members', require('./routes/api/members'));
+app.use('/api/members', require('./routes/api/members'));
 
 //app.use('/api/members')
 

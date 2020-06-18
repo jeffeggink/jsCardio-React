@@ -6,7 +6,7 @@ const members = require('../../public/Members');
 router.get('/', (req, res) =>  res.json(members));
 
 //gets one member
-router.get('/id', (req, res) => {
+router.get('/:id', (req, res) => {
     const found = members.some(member => member.id === parseInt(req.params.id));
 
     if (found) {
