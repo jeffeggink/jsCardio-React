@@ -1,9 +1,17 @@
 const express = require('express');
 const path = require('path');
+const moment = require('moment');
 const members = require('./public/Members')
 
 const app = express();
 
+const logger = (req, res, next) =>  {
+console.log(`${req.protocol}://${req.get('host')}${req.originalUrl}: ${moment().format()}`
+);
+    next();
+}
+
+app.use(logger);
 
 //gets all members
 app.get('/api/members', (req, res) => {
