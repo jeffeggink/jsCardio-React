@@ -60,7 +60,7 @@ router.delete('/:id', (req, res) => {
  
     if (found) {
         res.json(
-            members.filter(member => member.id !== parseInt(req.params.id}));
+            members.filter(member => member.id !== parseInt(req.params.id)));
     } else {
         res.status(400).json({msg: `no member with that ${req.params.id} id  you idiot`})
     }
