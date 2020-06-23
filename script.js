@@ -24,3 +24,9 @@ getPosts();
 createPost({
     title: 'post three', body: 'this is post three'
 })
+.then(getPosts);
+.catch(err => console.log(err));
+
+const promise1 = promise.resolve('hello mfr');
+const promise2 = 10;
+const promise3
