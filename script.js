@@ -29,4 +29,4 @@ createPost({
 
 const promise1 = promise.resolve('hello mfr');
 const promise2 = 10;
-const promise3
+const promise3 = new Promise([promise1, promise2, promise3]).then(values => console.log(values));
